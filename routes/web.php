@@ -1,4 +1,5 @@
 <?php
+use App\Http\Controllers\AdminController; // 追記
 use App\Http\Controllers\ItemController; // 追記
 use Illuminate\Support\Facades\Route;
 
@@ -18,3 +19,5 @@ Route::get('/', function () {
 });
 
 Route::get('/item', [ItemController::class, 'index']); // 追記
+
+Route::get('/admins', [AdminController::class, 'index']); // 追記
