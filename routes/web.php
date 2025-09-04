@@ -1,6 +1,6 @@
 <?php
-use App\Http\Controllers\AdminController; // 追記
-use App\Http\Controllers\ItemController; // 追記
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ItemController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +18,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/item', [ItemController::class, 'index']); // 追記
+// 商品一覧ページ
+Route::get('/item', [ItemController::class, 'index']);
 
-Route::get('/admins', [AdminController::class, 'index']); // 追記
+// 商品登録ページ
+Route::get('/item/add', [ItemController::class, 'showAdd']);
+
+// 商品登録の実行
+Route::post('/item/add', [ItemController::class, 'add']);
+
+// 商品編集ページ
+Route::get('/item/edit/{id}', [ItemController::class, 'showEdit']);
+
+// 管理者ページ
+Route::get('/admins', [AdminController::class, 'index']);
