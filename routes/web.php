@@ -32,3 +32,6 @@ Route::get('/item/edit/{id}', [ItemController::class, 'showEdit']);
 
 // 管理者ページ
 Route::get('/admins', [AdminController::class, 'index']);
+
+// 管理者編集ページ
+Route::get('/admin/edit/{id}', [AdminController::class, 'showEdit']);

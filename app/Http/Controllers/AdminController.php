@@ -9,4 +9,10 @@ class AdminController extends Controller
         // admins.blade.php を返却
         return view("admin.admins");
     }
+
+    // 管理者編集ページ
+    public function showEdit($id)
+    {
+        return view("admin.edit", ["id" => $id]);
+    }
 }
